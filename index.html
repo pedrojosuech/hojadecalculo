@@ -19,7 +19,7 @@
         </header>
 
         <section class="card example-section">
-            <h2 class="section-title"><i class="fas fa-lightbulb"></i> Ejercicio de Ejemplo</h2>
+            <h2 class="section-title"><i class="fas fa-lightbulb"></i> Ejercicio de Ejemplo (Informática)</h2>
             <div class="content-box">
                 <p>Imagina que eres un analista de rendimiento de software. Necesitas estimar el tiempo medio de respuesta de una nueva función. Has tomado una muestra de <strong>30</strong> mediciones de tiempo de respuesta (en milisegundos) y has calculado lo siguiente:</p>
                 <ul>
@@ -37,7 +37,7 @@
             </div>
         </section>
 
-        <form action="process.php" method="post" class="card form-section">
+        <form id="estimationForm" class="card form-section">
             <fieldset>
                 <legend class="field-legend"><i class="fas fa-chart-bar"></i> Datos de la Muestra</legend>
 
@@ -73,10 +73,15 @@
             <button type="submit" class="btn-submit"><i class="fas fa-play-circle"></i> Calcular Estimaciones</button>
         </form>
 
+        <div id="resultsDisplay" class="card results-area" style="display: none;">
+        </div>
+
         <footer class="footer">
             <p>&copy; 2025 Herramienta de Estimación Estadística. Todos los derechos reservados.</p>
             <p>TSU Pedro Chirino. TSU Lucy Veliz. TSU Erikson Antequera.</p>
         </footer>
     </div>
+
+    <script src="script.js"></script>
 </body>
 </html>
