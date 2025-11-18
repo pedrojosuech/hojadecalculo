@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Herramienta de Estimación Estadística</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <div class="logos-cintillo-container">
+                <img src="logo_uptag.png" alt="Logo UPTAG" class="logo-cintillo-left">
+                <img src="logo_pnfi.png" alt="Logo PNFI" class="logo-cintillo-right">
+            </div>
+            <h1 class="title"><i class="fas fa-calculator"></i> Estimación Estadística Simple</h1>
+            <p class="subtitle">Herramienta interactiva para estimaciones puntuales y por intervalo de la media poblacional.</p>
+        </header>
+
+        <section class="card example-section">
+            <h2 class="section-title"><i class="fas fa-lightbulb"></i> Ejercicio de Ejemplo</h2>
+            <div class="content-box">
+                <p>Imagina que eres un analista de rendimiento de software. Necesitas estimar el tiempo medio de respuesta de una nueva función. Has tomado una muestra de <strong>30</strong> mediciones de tiempo de respuesta (en milisegundos) y has calculado lo siguiente:</p>
+                <ul>
+                    <li><strong>Media muestral (X̄):</strong> 120 ms</li>
+                    <li><strong>Desviación estándar muestral (s):</strong> 15 ms</li>
+                </ul>
+                <p>Quieres realizar una estimación por intervalo con un nivel de confianza del <strong>95%</strong>.</p>
+                <div class="example-data">
+                    <p><strong>Datos para la herramienta:</strong></p>
+                    <p>Tamaño de la muestra (n): <span>30</span></p>
+                    <p>Media Muestral (X̄): <span>120</span></p>
+                    <p>Desviación Estándar Muestral (s): <span>15</span></p>
+                    <p>Nivel de Confianza (%): <span>95</span></p>
+                </div>
+            </div>
+        </section>
+
+        <form action="process.php" method="post" class="card form-section">
+            <fieldset>
+                <legend class="field-legend"><i class="fas fa-chart-bar"></i> Datos de la Muestra</legend>
+
+                <div class="form-group">
+                    <label for="sample_size">Tamaño de la Muestra (n):</label>
+                    <input type="number" id="sample_size" name="sample_size" required min="2" class="form-control">
+                    <p class="guide-text">Ingresa el número total de observaciones en tu muestra (mínimo 2).</p>
+                </div>
+
+                <div class="form-group">
+                    <label for="sample_mean">Media Muestral (X̄):</label>
+                    <input type="number" step="any" id="sample_mean" name="sample_mean" required class="form-control">
+                    <p class="guide-text">Ingresa el promedio de los datos de tu muestra.</p>
+                </div>
+
+                <div class="form-group">
+                    <label for="sample_std_dev">Desviación Estándar Muestral (s):</label>
+                    <input type="number" step="any" id="sample_std_dev" name="sample_std_dev" required min="0" class="form-control">
+                    <p class="guide-text">Ingresa la desviación estándar de los datos de tu muestra.</p>
+                </div>
+            </fieldset>
+
+            <fieldset>
+                <legend class="field-legend"><i classfas fa-cogs"></i> Configuración del Intervalo</legend>
+
+                <div class="form-group">
+                    <label for="confidence_level">Nivel de Confianza (%):</label>
+                    <input type="number" id="confidence_level" name="confidence_level" required min="1" max="99.9" value="95" class="form-control">
+                    <p class="guide-text">Define el nivel de confianza deseado (ej. 90, 95, 99).</p>
+                </div>
+            </fieldset>
+
+            <button type="submit" class="btn-submit"><i class="fas fa-play-circle"></i> Calcular Estimaciones</button>
+        </form>
+
+        <footer class="footer">
+            <p>&copy; 2025 Herramienta de Estimación Estadística. Todos los derechos reservados.</p>
+            <p>TSU Pedro Chirino. TSU Lucy Veliz. TSU Erikson Antequera.</p>
+        </footer>
+    </div>
+</body>
+</html>
